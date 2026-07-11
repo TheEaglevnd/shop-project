@@ -1,0 +1,36 @@
+.item {
+    border: 3px solid #ccc;
+    padding: 24px;
+    margin: 24px;
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    padding: 100px;
+
+    &:hover {
+        color: red;
+    }
+}
+     
+.m {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+    ;
+    align-items: center;
+    gap: 20px;
+       :hover {
+     opacity: 0.6;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+    ;
+    align-items: center;
+    }
+}
