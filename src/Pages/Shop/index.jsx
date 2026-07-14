@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "./shop.module.scss"
 import { Link } from 'react-router-dom'
 import MenuItem from '../../Components'
+import CollectionItem from '../../components/CollectionItem'
 function Shop({title}) {
   return (
 
@@ -12,11 +13,8 @@ function Shop({title}) {
      
 
      </div>
-
-       <Link to="/" onClick={(e) => e.stopPropagation()}>
-
-  go to main page
-</Link>
+     <CollectionItem/>
+    
     </div>
   )
 }

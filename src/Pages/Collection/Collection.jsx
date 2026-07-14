@@ -1,16 +1,47 @@
-import React from 'react'
-import { useLocation, useParams } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import styles from "./collection.module.scss";
+import { Link, useParams, useSearchParams } from "react-router-dom";
+import CollectionItem from "../../Components/CollectionItem";
+import { getData } from "../../services/apiClient";
 
-function Collection() {
-    const location = useLocation() 
-    const params = useParams()
-    console.log(params);
-    console.log(location);
+const Collection = () => {
+  const [products, setProducts] = useState([]);
+
+  const params = useParams();
+  const [searchParams] = useSearchParams();
+  const title = searchParams.get("title");
+
+  const fetchProducts = async () => {
+    try {
+      const data = await getData(`/products/category/${params.category}`);
+      setProducts(data.products);
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
+  useEffect(() => {
+    if (params.category) {
+      fetchProducts();
+    }
+  }, [params.category]);
+
   return (
-    <div className="flex flex-row justify-center items-center bg-white w-[200vh] h-[10vh] mt-6 text-2xl font-bold mx-auto rounded-3xl ">
-      {params.category}
-    </div>
-  )
-}
+        
+    <>
+    <div className="w-0.5 h-[150px] bg-white justify-center items-center ">{`${params.category}`}</div>
+      {title && <h1 className={styles.collectionTitle}> {title}</h1>}
+      <div className={styles.collectionContainer}>
+        {products?.map((item) => (
+          <Link to={`${item.id}`}>
+            <CollectionItem key={item.id} {...item} />
+          </Link>
+        ))}
+      </div>
+    
+    </>
+  );
+};
 
-export default Collection
+export default Collection;
+

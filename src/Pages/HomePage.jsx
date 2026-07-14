@@ -8,11 +8,11 @@ function HomePage({ title }) {
  
   const navigate = useNavigate();
   
- const handleClick = (title) => navigate(`/Collection/${title}`)
+ const handleClick = (category) => navigate(`/Collection/${category}`)
   return (
     <div className={styles.menuContainer}>
       {categories.map((item) => (
-        <MenuItem title={item.title} key={item.id} imgurl={item.image} onClick={() => handleClick(item.title)} />
+        <MenuItem title={item.title} key={item.id} imgurl={item.image} onClick={() => handleClick(item.category)} />
         
       ))}
     </div>
