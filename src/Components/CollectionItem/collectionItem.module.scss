@@ -10,6 +10,7 @@
   border: 1px solid #eee;
   border-radius: 8px;
   min-width: 280px;
+  height: 100%;
   transition: scale ease-in-out 200ms;
   &:hover {
     scale: 0.96;

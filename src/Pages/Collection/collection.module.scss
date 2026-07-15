@@ -1,8 +1,10 @@
 .collectionContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
   gap: 8px;
   padding: 16px;
+  width: auto;
+  height: auto;
 }
 .collectionTitle {
   font-size: 18px;
@@ -13,4 +15,5 @@
   margin: 5px 5px 0 5px;
   padding: 16px;
   border-radius: 8px;
+
 }
