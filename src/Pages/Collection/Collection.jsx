@@ -29,7 +29,8 @@ const Collection = () => {
   return (
         
     <>
-    <div className="w-0.5 h-[150px] bg-white justify-center items-center ">{`${params.category}`}</div>
+    <div className="w-[70%] h-37.5 rounded-2xl flex mt-10 justify-self-center mx-auto text-3xl font-bold
+     bg-white justify-center items-center ">{`${params.category}`}</div>
       {title && <h1 className={styles.collectionTitle}> {title}</h1>}
       <div className={styles.collectionContainer}>
         {products?.map((item) => (
