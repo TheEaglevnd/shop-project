@@ -13,7 +13,7 @@ function Shop({title}) {
      
 
      </div>
-     <CollectionItem/>
+     
     
     </div>
   )

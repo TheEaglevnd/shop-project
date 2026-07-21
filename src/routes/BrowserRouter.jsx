@@ -8,6 +8,7 @@ import { createBrowserRouter } from "react-router-dom"
 import LayOut from "../Components/LayOut"
 import HomePage from "../Pages/HomePage" 
 import Error from "../Pages/Error/Error"
+import ItemDetail from "../Components/ItemDetail"
 
 
 const router = createBrowserRouter([
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
       {
         path : "Collection/:category",
         element: <Collection/>
+      } , 
+      {path : "Collection/:category/:ItemDetail" , 
+      element : <ItemDetail/>
       }
+
     ]
   }
 ])

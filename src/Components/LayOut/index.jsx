@@ -8,9 +8,7 @@ function LayOut() {
       <div className={styles.appContainer}>
       <Header/>
       <Outlet/>
-      <Link to="/" onClick={(e) => e.stopPropagation()}>
-  go to main page
-</Link>
+     
 
     </div>
   )
